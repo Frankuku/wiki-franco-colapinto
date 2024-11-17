@@ -512,3 +512,41 @@ body {
         text-align: left;
     }
 }
+
+/*----------------------------novedades----------------------------*/
+.novedades {
+    width: 100%;
+    height: 90vh;
+}
+
+.novedades img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.novedades .noticia_card {
+    z-index: 10;
+}
+
+.novedades .noticia_card .card {
+    height: 60%;
+    background-color: transparent;
+    color: var(--blanco--);
+    text-align: left;
+    font-family: var(--fuentetexto--);
+    font-weight: var(--boldtexto--);
+    font-size: 1.4rem;
+}
+
+.novedades .noticia_card .card img {
+    border-radius: 1rem;
+    filter: contrast(80%);
+}
+
+.novedades .noticia_card .card>.card-img-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
