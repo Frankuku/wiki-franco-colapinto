@@ -278,9 +278,9 @@ body {
 }
 
 .info_biografia .biografia_titulo {
-    font-size: 36px;
+    font-size: 27px;
     font-weight: var(--boldtitulo--);
-    line-height: 2.7rem;
+    line-height: 2.3rem;
     width: 95%;
     margin: auto;
 }
@@ -307,6 +307,13 @@ body {
     .info_biografia {
         margin: 0 auto;
         width: 58%;
+    }
+
+    .info_biografia .biografia_titulo {
+        font-size: 36px;
+        font-weight: var(--boldtitulo--);
+        line-height: 2.7rem;
+        width: 95%;
     }
 
 
