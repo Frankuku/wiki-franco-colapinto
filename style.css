@@ -5,6 +5,9 @@
     --rojo--: red;
     --azul--: #00162b;
     --blanco--: white;
+    --fuentePrincipal--: font-family: 'Open Sans', sans-serif;
+    --fuenteSecundaria--: font-family: 'Lato', sans-serif;
+
 }
 
 * {
