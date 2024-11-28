@@ -55,8 +55,8 @@
             </div>
         </nav>
     </section>
-    <header>
-        <div class="card text-bg-dark">
+    <header class="mt-5">
+        <div class="card text-bg-dark ">
             <img src="img/Franco_Colapintof1.jpg" class="img_header" alt="Franco_Colapintof1">
             <main class="card-img-overlay info_header">
                 <h1 class="card-title"><samp>Franco</samp><br> colapinto</h1>
@@ -279,13 +279,55 @@
         <p class="text-center text-light">© Frankuku para Franco-Colapinto </p>
     </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Seleccionar todos los enlaces del nav
+            const links = document.querySelectorAll('.navbar-nav .nav-link');
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
+            // Obtenemos el offcanvas
+            const offcanvas = new bootstrap.Offcanvas(document.getElementById('offcanvasNavbar'));
+
+            // Obtener la altura del navbar fijo
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+
+            // Asignar evento a cada enlace
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    // Prevenir el comportamiento por defecto del enlace
+                    e.preventDefault();
+
+                    // Obtener el ID del elemento al que se quiere desplazar
+                    const targetId = this.getAttribute('href').substring(1); // Quitar el '#' del href
+                    const targetElement = document.getElementById(targetId);
+
+                    // Si el elemento destino existe, hacer el desplazamiento
+                    if (targetElement) {
+                        // Realizar el scroll con un ajuste por la altura del navbar
+                        window.scrollTo({
+                            top: targetElement.offsetTop - navbarHeight, // Restar la altura del navbar
+                            behavior: 'smooth' // Desplazamiento suave
+                        });
+                    }
+
+                    // Cerrar el offcanvas después de hacer el desplazamiento
+                    offcanvas.hide();
+                });
+            });
+
+            // Evitar que el cierre del offcanvas cause desplazamiento hacia arriba
+            const offcanvasCloseButton = document.querySelector('[data-bs-dismiss="offcanvas"]');
+            if (offcanvasCloseButton) {
+                offcanvasCloseButton.addEventListener('click', function () {
+                    // Evitar el desplazamiento automático al cerrar el offcanvas
+                    window.scrollTo(0, window.pageYOffset); // Mantener la posición actual de la página
+                });
+            }
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>
